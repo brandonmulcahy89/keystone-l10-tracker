@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 30% 96%;
+    --foreground: 216 50% 13%;
+
+    --card: 40 30% 95%;
+    --card-foreground: 216 50% 13%;
+
+    --popover: 40 30% 95%;
+    --popover-foreground: 216 50% 13%;
+
+    --primary: 216 56% 13%;
+    --primary-foreground: 40 30% 95%;
+
+    --secondary: 33 75% 47%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 20% 90%;
+    --muted-foreground: 216 20% 46%;
+
+    --accent: 33 75% 47%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 33 75% 47%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 220 20% 82%;
+    --input: 220 20% 82%;
+    --ring: 33 75% 47%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 216 56% 13%;
+    --sidebar-foreground: 40 30% 95%;
+    --sidebar-primary: 33 75% 47%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 216 56% 20%;
+    --sidebar-accent-foreground: 40 30% 95%;
+    --sidebar-border: 216 40% 25%;
+    --sidebar-ring: 33 75% 47%;
+
+    --navy: 216 56% 13%;
+    --navy-light: 216 40% 25%;
+    --amber: 33 75% 47%;
+    --amber-light: 33 80% 60%;
+    --cream: 40 30% 95%;
+    --cream-dark: 40 20% 88%;
+
+    --font-heading: 'Libre Baskerville', serif;
+    --font-body: 'Outfit', sans-serif;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer components {
+  .pill-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold tracking-wide uppercase;
+    background: hsl(var(--amber));
+    color: hsl(var(--primary));
+  }
+
+  .section-card {
+    @apply rounded-lg border p-6;
+    background: hsl(var(--card));
+    border-color: hsl(var(--border));
+  }
+
+  .nav-tab {
+    @apply px-4 py-2 text-sm font-medium transition-colors rounded-md cursor-pointer;
+    color: hsl(var(--muted-foreground));
+  }
+
+  .nav-tab-active {
+    @apply nav-tab;
+    background: hsl(var(--amber));
+    color: hsl(var(--primary));
+  }
+
+  .status-synced {
+    @apply w-2.5 h-2.5 rounded-full;
+    background: hsl(var(--success));
+  }
+
+  .status-saving {
+    @apply w-2.5 h-2.5 rounded-full;
+    background: hsl(var(--amber));
+  }
+
+  .status-error {
+    @apply w-2.5 h-2.5 rounded-full;
+    background: hsl(var(--destructive));
+  }
+
+  .progress-bar {
+    @apply h-1 rounded-full;
+    background: hsl(var(--cream-dark));
+  }
+
+  .progress-fill {
+    @apply h-1 rounded-full transition-all duration-300;
+    background: hsl(var(--amber));
+  }
+}
